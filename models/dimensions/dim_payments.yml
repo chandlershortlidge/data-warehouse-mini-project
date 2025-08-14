@@ -1,0 +1,17 @@
+version: 2
+
+models:
+  - name: dim_payments
+    description: "Payment dimension listing available payment methods."
+    columns:
+      - name: payment_id
+        description: "Unique id for each payment method."
+        tests:
+          - unique
+          - not_null
+
+      - name: payment_method
+        description: "Payment method name."
+        tests:
+          - accepted_values:
+              values: ['credit_card', 'coupon', 'bank_transfer', 'gift_card']

@@ -1,0 +1,20 @@
+version: 2
+
+models:
+  - name: fact_sales
+    description: "Order line-level sales facts."
+    columns:
+
+      - name: sales_id
+        description: "Order identifier."
+        tests:
+          - not_null
+          - unique
+
+      - name: customer_id
+        description: "FK to dim_customers."
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_customers')
+              field: customer_id

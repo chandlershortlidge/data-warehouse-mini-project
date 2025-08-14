@@ -1,0 +1,16 @@
+# models/raw/sources.yml
+version: 2
+
+sources:
+  - name: ecommerce_raw
+    database: snowflake_learning_db
+    schema: public
+    tables:
+      - name: client
+      - name: orders 
+      - name: client_status
+      - name: client_type
+      - name: order_product
+      - name: payment_method
+      - name: product
+    
